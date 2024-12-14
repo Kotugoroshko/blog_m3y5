@@ -6,10 +6,9 @@
     <title>Пости</title>
 </head>
 <body>
-    <h2>Пости</h2>
-    <a href="{% url 'author_posts' 1 %}" target="blank">Сортувати за автором</a>
+    <h2>Автор - {{author_name}}</h2>
     <ul>
-        {% for post in post_list%}
+        {% for post in posts%}
             <li>
                 {{post.title}} - {{post.published_date}}
                 <a href="{% url 'post_details' post.id %}" target="blank">Детальніше</a>
