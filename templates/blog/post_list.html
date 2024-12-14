@@ -7,7 +7,13 @@
 </head>
 <body>
     <h2>Пости</h2>
-    <a href="{% url 'author_posts' 1 %}" target="blank">Сортувати за автором</a>
+    <h4>Автори:
+        {% for author in author_list%}
+            <a href="{% url 'author_posts' author.id %}" target="blank">{{author.name}}</a>
+
+        {% endfor %}
+    </h2>
+    
     <ul>
         {% for post in post_list%}
             <li>
